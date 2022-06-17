@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F264C36-084D-47A4-B60A-52348D4A379A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TPI</RootNamespace>
+    <AssemblyName>TPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoADatos\AD_Asistencia.cs" />
+    <Compile Include="AccesoADatos\AD_Camion.cs" />
+    <Compile Include="AccesoADatos\AD_Camiones.cs" />
+    <Compile Include="AccesoADatos\AD_Ciudades.cs" />
+    <Compile Include="AccesoADatos\AD_Combustible.cs" />
+    <Compile Include="AccesoADatos\AD_Empleados.cs" />
+    <Compile Include="AccesoADatos\AD_Estacion.cs" />
+    <Compile Include="AccesoADatos\AD_Remitos.cs" />
+    <Compile Include="AccesoADatos\AD_Tanque.cs" />
+    <Compile Include="AccesoADatos\AD_TipoCombustible.cs" />
+    <Compile Include="AccesoADatos\AD_TipoDoc.cs" />
+    <Compile Include="AccesoADatos\AD_Turno.cs" />
+    <Compile Include="AccesoADatos\AD_Usuarios.cs" />
+    <Compile Include="AccesoADatos\AD_Varios.cs" />
+    <Compile Include="BD3K7G09_2021DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD3K7G09_2021DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD3K7G09_2021DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD3K7G09_2021DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD3K7G09_2021DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD3K7G09_2021DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConjuntoDeDatos\DataEstadistica3.cs">
+      <DependentUpon>DataEstadistica3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConjuntoDeDatos\DataEstadistica3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataEstadistica3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Estadistica3Filtros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Estadistica3Filtros.Designer.cs">
+      <DependentUpon>Estadistica3Filtros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEstadistica3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteEstadistica3.Designer.cs">
+      <DependentUpon>ReporteEstadistica3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Asistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Asistencia.Designer.cs">
+      <DependentUpon>Asistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\DetalleRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\DetalleRemito.Designer.cs">
+      <DependentUpon>DetalleRemito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaEmpleado.Designer.cs">
+      <DependentUpon>AltaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaTipoCombustible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaTipoCombustible.Designer.cs">
+      <DependentUpon>AltaTipoCombustible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaTipoDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaTipoDoc.Designer.cs">
+      <DependentUpon>AltaTipoDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\TipoCombustible.cs" />
+    <Compile Include="Entidades\TipoDoc.cs" />
+    <Compile Include="Formularios\AltaCamion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaCamion.Designer.cs">
+      <DependentUpon>AltaCamion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaCiudad.Designer.cs">
+      <DependentUpon>AltaCiudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaCombustible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaCombustible.Designer.cs">
+      <DependentUpon>AltaCombustible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaEstacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaEstacion.Designer.cs">
+      <DependentUpon>AltaEstacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaPais.Designer.cs">
+      <DependentUpon>AltaPais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaProvincia.Designer.cs">
+      <DependentUpon>AltaProvincia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaTanque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaTanque.Designer.cs">
+      <DependentUpon>AltaTanque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\AltaTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaTurno.Designer.cs">
+      <DependentUpon>AltaTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\Camion.cs" />
+    <Compile Include="Entidades\Ciudades.cs" />
+    <Compile Include="Entidades\Combustible.cs" />
+    <Compile Include="Entidades\Empleado.cs" />
+    <Compile Include="Entidades\Estacion.cs" />
+    <Compile Include="Entidades\Marca.cs" />
+    <Compile Include="Entidades\Modelo.cs" />
+    <Compile Include="Entidades\Pais.cs" />
+    <Compile Include="Entidades\Provincia.cs" />
+    <Compile Include="Entidades\Tanque.cs" />
+    <Compile Include="Entidades\Turno.cs" />
+    <Compile Include="Formularios\ABM_Marca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM_Marca.Designer.cs">
+      <DependentUpon>ABM_Marca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM_Modelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM_Modelos.Designer.cs">
+      <DependentUpon>ABM_Modelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PrincipalForm.Designer.cs">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\NuevoRemito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\NuevoRemito.designer.cs">
+      <DependentUpon>NuevoRemito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaCombustible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaCombustible.Designer.cs">
+      <DependentUpon>ReporteListaCombustible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoCombustibleFiltros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoCombustibleFiltros.Designer.cs">
+      <DependentUpon>ReporteListadoCombustibleFiltros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ListadoAsistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ListadoAsistencias.designer.cs">
+      <DependentUpon>ListadoAsistencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ListadoEmpleadoTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ListadoEmpleadoTurno.designer.cs">
+      <DependentUpon>ListadoEmpleadoTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Formularios\Remitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Remitos.designer.cs">
+      <DependentUpon>Remitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoCamiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoCamiones.designer.cs">
+      <DependentUpon>ReporteListadoCamiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaCamionConFiltros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaCamionConFiltros.designer.cs">
+      <DependentUpon>ReporteListaCamionConFiltros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteFiltradoEstaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteFiltradoEstaciones.designer.cs">
+      <DependentUpon>ReporteFiltradoEstaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoEstaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoEstaciones.designer.cs">
+      <DependentUpon>ReporteListadoEstaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoTurnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoTurnos.designer.cs">
+      <DependentUpon>ReporteListadoTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoTurnoRestricciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListadoTurnoRestricciones.designer.cs">
+      <DependentUpon>ReporteListadoTurnoRestricciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaTanqueFiltros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaTanqueFiltros.designer.cs">
+      <DependentUpon>ReporteListaTanqueFiltros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaTanques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaTanques.designer.cs">
+      <DependentUpon>ReporteListaTanques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaEmpleado.designer.cs">
+      <DependentUpon>ReporteListaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaEmpleadoRestricciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReporteListaEmpleadoRestricciones.designer.cs">
+      <DependentUpon>ReporteListaEmpleadoRestricciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="ConjuntoDeDatos\DatosCombustible.rdlc" />
+    <EmbeddedResource Include="ConjuntoDeDatos\DatosAsistencia.rdlc" />
+    <EmbeddedResource Include="ConjuntoDeDatos\DatosEmpleadoTurno.rdlc" />
+    <EmbeddedResource Include="ConjuntoDeDatos\DatosTurnos.rdlc" />
+    <EmbeddedResource Include="ConjuntoDeDatos\DatosTanque.rdlc" />
+    <EmbeddedResource Include="ConjuntoDeDatos\DatosEmpleado.rdlc" />
+    <EmbeddedResource Include="ConjuntoDeDatos\EstadisticaCombXEstacion.rdlc" />
+    <EmbeddedResource Include="Formularios\Estadistica3Filtros.resx">
+      <DependentUpon>Estadistica3Filtros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteEstadistica3.resx">
+      <DependentUpon>ReporteEstadistica3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Asistencia.resx">
+      <DependentUpon>Asistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\DetalleRemito.resx">
+      <DependentUpon>DetalleRemito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaEmpleado.resx">
+      <DependentUpon>AltaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaTipoCombustible.resx">
+      <DependentUpon>AltaTipoCombustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaTipoDoc.resx">
+      <DependentUpon>AltaTipoDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaCamion.resx">
+      <DependentUpon>AltaCamion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaCiudad.resx">
+      <DependentUpon>AltaCiudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaCombustible.resx">
+      <DependentUpon>AltaCombustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaEstacion.resx">
+      <DependentUpon>AltaEstacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaPais.resx">
+      <DependentUpon>AltaPais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaProvincia.resx">
+      <DependentUpon>AltaProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaTanque.resx">
+      <DependentUpon>AltaTanque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaTurno.resx">
+      <DependentUpon>AltaTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM_Marca.resx">
+      <DependentUpon>ABM_Marca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM_Modelos.resx">
+      <DependentUpon>ABM_Modelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PrincipalForm.resx">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\NuevoRemito.resx">
+      <DependentUpon>NuevoRemito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListaCombustible.resx">
+      <DependentUpon>ReporteListaCombustible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListadoCombustibleFiltros.resx">
+      <DependentUpon>ReporteListadoCombustibleFiltros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConjuntoDeDatos\ListadoDeCamiones.rdlc" />
+    <EmbeddedResource Include="ConjuntoDeDatos\ListadoEstaciones.rdlc" />
+    <EmbeddedResource Include="Formularios\ListadoAsistencias.resx">
+      <DependentUpon>ListadoAsistencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ListadoEmpleadoTurno.resx">
+      <DependentUpon>ListadoEmpleadoTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Formularios\Remitos.resx">
+      <DependentUpon>Remitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListadoCamiones.resx">
+      <DependentUpon>ReporteListadoCamiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListaCamionConFiltros.resx">
+      <DependentUpon>ReporteListaCamionConFiltros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteFiltradoEstaciones.resx">
+      <DependentUpon>ReporteFiltradoEstaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListadoEstaciones.resx">
+      <DependentUpon>ReporteListadoEstaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListadoTurnos.resx">
+      <DependentUpon>ReporteListadoTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListadoTurnoRestricciones.resx">
+      <DependentUpon>ReporteListadoTurnoRestricciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListaTanqueFiltros.resx">
+      <DependentUpon>ReporteListaTanqueFiltros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListaTanques.resx">
+      <DependentUpon>ReporteListaTanques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListaEmpleado.resx">
+      <DependentUpon>ReporteListaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReporteListaEmpleadoRestricciones.resx">
+      <DependentUpon>ReporteListaEmpleadoRestricciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BD3K7G09_2021DataSet.xsc">
+      <DependentUpon>BD3K7G09_2021DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD3K7G09_2021DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD3K7G09_2021DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD3K7G09_2021DataSet.xss">
+      <DependentUpon>BD3K7G09_2021DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD3K7G09_2021DataSet1.xsc">
+      <DependentUpon>BD3K7G09_2021DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BD3K7G09_2021DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD3K7G09_2021DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD3K7G09_2021DataSet1.xss">
+      <DependentUpon>BD3K7G09_2021DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="BD3K7G09_2021DataSet2.xsc">
+      <DependentUpon>BD3K7G09_2021DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="BD3K7G09_2021DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD3K7G09_2021DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD3K7G09_2021DataSet2.xss">
+      <DependentUpon>BD3K7G09_2021DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ConjuntoDeDatos\DataEstadistica3.xsc">
+      <DependentUpon>DataEstadistica3.xsd</DependentUpon>
+    </None>
+    <None Include="ConjuntoDeDatos\DataEstadistica3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataEstadistica3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ConjuntoDeDatos\DataEstadistica3.xss">
+      <DependentUpon>DataEstadistica3.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_cross_4115230.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_close_1814098.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YPF.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YPF.svg1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_Filling_station_fuel_station_gas_station_petrol_pump_petrol_station_4753014.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %285%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descarga2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YPF.svg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage %285%292.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\YPF.svg3.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
